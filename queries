@@ -1,0 +1,13 @@
+select created_at from blogger where created_at >'2020-01-01';
+update blogger set password='bad_password' where password='pass';
+
+
+
+select blogger.username, blog_post.content, blog_post.title 
+from blogger inner join blog_post on blogger.id = blog_post.blogger_id
+where blogger.id =5;
+
+select blogger.username, blog_post.title, blog_post_comment.content
+from blogger inner join blog_post on blogger.id = blog_post.blogger_id 
+inner join blog_post_comment on blog_post.id = blog_post_comment.blog_post_id 
+where blogger.id =1;
